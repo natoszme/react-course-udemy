@@ -1,0 +1,15 @@
+.product-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.product {
+  float: left;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 200px;
+  min-height: 200px;
+}

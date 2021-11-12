@@ -9,9 +9,8 @@ class Shop extends Component {
   }
 
   render() {
-    console.log({ state: this.state })
     return <div>
-      <Navbar cart={this.cart}/>
+      <Navbar cart={this.state.cart}/>
       <ProductList addToCart={this.addToCart}/>
     </div>
   }

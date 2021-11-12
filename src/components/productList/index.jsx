@@ -1,9 +1,11 @@
 import { Component } from "react";
+import { Card, Button } from "react-bootstrap";
+import "./index.css"
 import _ from "lodash";
 
 const products = [
   {
-    name: "tomatoe",
+    name: "tomate",
     price: 10,
     imageUrl: "https://agroactivocol.com/wp-content/uploads/2020/07/Tomate-Corona-1.jpg"
   },
@@ -16,21 +18,21 @@ const products = [
 
 class Navbar extends Component {
   render() {
-    console.log({ props: this.props })
-    return <div>
+    return <div className="product-list">
       {_.map(products, this.product)}
     </div>;
   }
 
   product = ({ name, price, imageUrl }, i) => {
-    return <div key={i}>
-      <img src={imageUrl} />
-      <p>{name}</p>
-      <p>{price}</p>
-      <button onClick={(() => this.props.addToCart({ name, price }))}>
-        Agregar al carrito
-      </button>
-    </div>;
+    return <Card style={{ width: '18rem' }} className="product">
+      <Card.Img variant="top" />
+      <Card.Body>
+        <img src={imageUrl} className="product-image"/>
+        <Card.Title>{_.upperFirst(name)}</Card.Title>
+        <Card.Text>{price}</Card.Text>
+        <Button variant="primary" onClick={(() => this.props.addToCart({ name, price }))}>Agregar al carrito</Button>
+      </Card.Body>
+    </Card>
   }
 }
 
