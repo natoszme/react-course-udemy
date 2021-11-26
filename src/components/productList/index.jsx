@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Card, Button } from "react-bootstrap";
+import Product from "../product";
 import "./index.css"
 import _ from "lodash";
 
@@ -16,24 +16,19 @@ const products = [
   }
 ];
 
-class Navbar extends Component {
+class ProductList extends Component {
   render() {
     return <div className="product-list">
-      {_.map(products, this.product)}
+      {_.map(products, product =>
+        <Product
+          addToCart={this.props.addToCart}
+          key={product.name}
+          product={product}
+        />
+      )
+      }
     </div>;
-  }
-
-  product = ({ name, price, imageUrl }, i) => {
-    return <Card style={{ width: '18rem' }} className="product">
-      <Card.Img variant="top" />
-      <Card.Body>
-        <img src={imageUrl} className="product-image"/>
-        <Card.Title>{_.upperFirst(name)}</Card.Title>
-        <Card.Text>{price}</Card.Text>
-        <Button variant="primary" onClick={(() => this.props.addToCart({ name, price, imageUrl }))}>Agregar al carrito</Button>
-      </Card.Body>
-    </Card>
   }
 }
 
-export default Navbar;
+export default ProductList;
