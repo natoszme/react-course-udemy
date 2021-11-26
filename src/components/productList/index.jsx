@@ -30,7 +30,7 @@ class Navbar extends Component {
         <img src={imageUrl} className="product-image"/>
         <Card.Title>{_.upperFirst(name)}</Card.Title>
         <Card.Text>{price}</Card.Text>
-        <Button variant="primary" onClick={(() => this.props.addToCart({ name, price }))}>Agregar al carrito</Button>
+        <Button variant="primary" onClick={(() => this.props.addToCart({ name, price, imageUrl }))}>Agregar al carrito</Button>
       </Card.Body>
     </Card>
   }
