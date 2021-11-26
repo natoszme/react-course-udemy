@@ -10,7 +10,7 @@ class CartDetail extends Component {
       {
         _.map(cart, ({ name, quantity, price, imageUrl }, i) =>
           <li key={i} className="cart-product">
-            <img alt={name} src={imageUrl} width='50' height='32' />
+            <img alt={name} src={imageUrl} className="image" />
               {name} <span>{quantity}</span> <span>{price}</span>
           </li>
         )
