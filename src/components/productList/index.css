@@ -2,10 +2,13 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 40px;
 }
 
 .product {
   float: left;
+  margin-left: 20px;
+  box-shadow: 0 2px 3px rgb(0,0,0,0.1);
 }
 
 .product-image {
