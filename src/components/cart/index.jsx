@@ -5,7 +5,7 @@ import _ from "lodash";
 
 class Cart extends Component {
   state = {
-    cartDetailVisible: false
+    cartDetailIsVisible: false
   };
 
   render() {
@@ -14,20 +14,20 @@ class Cart extends Component {
     return <div>
       <span className="cart-bubble">
         {
-          totalQuantity > 0 && <span className="bubbleAlert"> {totalQuantity} </span>
+          totalQuantity > 0 && <span className="bubble-alert"> {totalQuantity} </span>
         }
       </span>
-      <button className="cart-button" onClick={this.toggleCartDetail}>
+      <button className="cart-button" onClick={this.toggleCartDetailVisibility}>
         Carrito 
       </button>
       {
-        this.state.cartDetailVisible && <CartDetail cart={cart}/>
+        this.state.cartDetailIsVisible && <CartDetail cart={cart}/>
       }
     </div>;
   }
 
-  toggleCartDetail = () => {
-    this.setState({ cartDetailVisible: !this.state.cartDetailVisible })
+  toggleCartDetailVisibility = () => {
+    this.setState({ cartDetailIsVisible: !this.state.cartDetailIsVisible })
   }
 }
 

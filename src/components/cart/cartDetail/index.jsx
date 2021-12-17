@@ -18,10 +18,6 @@ class CartDetail extends Component {
       </ul>
     </div>;
   }
-
-  toggleCartDetail = () => {
-    this.setState({ cartDetailVisible: !this.state.cartDetailVisible })
-  }
 }
 
 export default CartDetail;

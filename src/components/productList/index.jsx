@@ -25,8 +25,7 @@ class ProductList extends Component {
           key={product.name}
           product={product}
         />
-      )
-      }
+      )}
     </div>;
   }
 }
